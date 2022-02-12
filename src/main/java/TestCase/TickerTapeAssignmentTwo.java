@@ -120,9 +120,9 @@ public class TickerTapeAssignmentTwo
 	Thread.sleep(10000);
 	AmazonPage amz=new AmazonPage(driver);
 	
-	amz.amzSearch().sendKeys("iphone");
+	amz.amzSearch().sendKeys(flib.getValue("iteam2"));
 	
-	amz.match().sendKeys("abc");
+	amz.match().click();
 	
 	
 	

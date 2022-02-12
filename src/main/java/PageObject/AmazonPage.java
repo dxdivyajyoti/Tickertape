@@ -11,7 +11,7 @@ public class AmazonPage
 	
 	@FindBy(xpath = "//input[@id='twotabsearchtextbox']") public WebElement amzSearchBox;
 	
-	@FindBy(xpath="(//span[@class='a-size-medium a-color-base a-text-normal'])[1]")
+	@FindBy(xpath="//input[@id='nav-search-submit-button']")
 	public WebElement selectMatch;
 	
 	@FindBy(xpath="//div[@class='a-section a-spacing-none s-padding-right-small s-title-instructions-style']/\"\n"
