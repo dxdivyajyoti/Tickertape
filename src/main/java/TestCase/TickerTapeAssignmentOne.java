@@ -20,7 +20,7 @@ import org.testng.annotations.Test;
 import PageObject.FlipkartPage;
 import Utility.FileUtility;
 
-public class TickerTapeAssignment 
+public class TickerTapeAssignmentOne
 {
 public static WebDriver driver;
 public static WebDriverWait wait;

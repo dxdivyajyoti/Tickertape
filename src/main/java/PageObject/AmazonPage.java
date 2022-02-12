@@ -9,7 +9,7 @@ public class AmazonPage
 {
 	public static WebDriver driver;
 	
-	@FindBy(xpath = "//div[@class='nav-search-field ']") public WebElement amzSearchBox;
+	@FindBy(xpath = "//input[@id='twotabsearchtextbox']") public WebElement amzSearchBox;
 	
 	@FindBy(xpath="(//span[@class='a-size-medium a-color-base a-text-normal'])[1]")
 	public WebElement selectMatch;

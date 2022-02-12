@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="BaseTest.BaseClass">
+      <class name="TestCase.TickerTapeAssignmentTwo">
         <methods>
-          <include name="run1"/>
           <include name="initConfiguration"/>
           <include name="quitBrowser"/>
+          <include name="amzScenario"/>
         </methods>
-      </class> <!-- BaseTest.BaseClass -->
+      </class> <!-- TestCase.TickerTapeAssignmentTwo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
