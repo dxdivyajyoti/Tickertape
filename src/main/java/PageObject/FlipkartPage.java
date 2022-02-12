@@ -23,6 +23,7 @@ public WebElement initialPrice;
 @FindBy(xpath = "(//div[@class='_2uHLC8 llHQRh _1o7oHE'])[2]") public WebElement scroll;
 @FindBy(xpath = "(//button[@class='_23FHuj'])[2]")  public WebElement updateQuantity;
 @FindBy(xpath = "//div[@class='Ob17DV _3X7Jj1']")  public WebElement getPrice;
+@FindBy(xpath="//div[@class='_3fSRat']/descendant::div[@class='_2-uG6-']") public WebElement getName;
 
 public FlipkartPage(WebDriver driver)
 {
@@ -64,6 +65,10 @@ public WebElement addOneMore()
 public WebElement  getPrice()
 {
 	return getPrice;
+}
+public WebElement getName()
+{
+	return getName;
 }
 
 

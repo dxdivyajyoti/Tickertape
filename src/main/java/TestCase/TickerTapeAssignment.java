@@ -93,6 +93,8 @@ try {
 	e.printStackTrace();
 }
 System.out.println(fp.getPrice().getText());
+
+System.out.println("product name is"+fp.getName().getText());
 }
 @AfterMethod
 public static void quitBrowser()
