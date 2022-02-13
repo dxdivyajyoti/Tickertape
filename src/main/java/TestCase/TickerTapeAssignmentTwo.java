@@ -42,12 +42,11 @@ public class TickerTapeAssignmentTwo
 				System.setProperty("webdriver.chrome.driver", "/Users/divyajyoti/selenium/chromedriver");
 
 			
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--disable-extensions");
-				options.addArguments("--disable-infobars");
-				options.addArguments("start-Maximized");
+				ChromeOptions chromeOptions = new ChromeOptions();
+				chromeOptions.addArguments("--kiosk");
+				driver = new ChromeDriver(chromeOptions);
 
-				driver = new ChromeDriver(options);
+				
 			}
 		} 
 		catch (Throwable e1) 
@@ -56,7 +55,7 @@ public class TickerTapeAssignmentTwo
 			e1.printStackTrace();
 		}
 		
-		driver.manage().window().maximize();
+
 
 	}
 	
@@ -154,7 +153,7 @@ public class TickerTapeAssignmentTwo
 		}
 	}
 	
-	System.out.println("Selling price  @Flipkart is "+amz.initialPrice().getText());
+	System.out.println("Selling price  @Amazon is "+amz.initialPrice().getText());
 	System.out.println("-----------------------------------------------");
 	
 	amz.addToCart().click();

@@ -45,7 +45,7 @@ public  void initConfiguration() throws Throwable
 		chromeOptions.addArguments("--kiosk");
 		driver = new ChromeDriver(chromeOptions);
 
-		driver = new ChromeDriver(chromeOptions);
+		
 	}
 	
 	driver.get(flib.getValue("flkUrl"));

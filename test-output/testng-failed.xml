@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCase.TickerTapeAssignmentOne">
+      <class name="TestCase.TickerTapeAssignmentTwo">
         <methods>
+          <include name="fkpScenario"/>
           <include name="initConfiguration"/>
           <include name="quitBrowser"/>
-          <include name="runScenarioOne"/>
         </methods>
-      </class> <!-- TestCase.TickerTapeAssignmentOne -->
+      </class> <!-- TestCase.TickerTapeAssignmentTwo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
