@@ -9,22 +9,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import PageObject.AmazonPage;
-import PageObject.FlipkartPage;
-import Utility.FileUtility;
 
+import PageObject.AmazonPageRepo;
+import PageObject.FlipkartPageRepo;
+import Utility.FileUtility;
 public class TickerTapeAssignmentTwo 
 {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	public static FileUtility flib;
+	
 	@BeforeMethod
 	public  void initConfiguration() 
 	{
@@ -43,7 +45,7 @@ public class TickerTapeAssignmentTwo
 
 			
 				ChromeOptions chromeOptions = new ChromeOptions();
-				chromeOptions.addArguments("--kiosk");
+				chromeOptions.addArguments("start-maximized");
 				driver = new ChromeDriver(chromeOptions);
 
 				
@@ -65,10 +67,10 @@ public class TickerTapeAssignmentTwo
 	
 	
 	@Test
-	public void fkpScenario() throws Throwable 
+	public void fkamzScenario() throws Throwable 
 	{
 		driver.get(flib.getValue("flkUrl"));
-		FlipkartPage fp=new FlipkartPage(driver);
+		FlipkartPageRepo fp=new FlipkartPageRepo(driver);
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		fp.closePopup().click();
 		try 
@@ -124,15 +126,19 @@ public class TickerTapeAssignmentTwo
 
 	int fkPrice = Integer.parseInt(str1);
 	
+	
+	
 	// Launch Amazon url
 	
-		driver.get(flib.getValue("amzUrl"));
-		wait=new WebDriverWait(driver,20);
-		
+	
+	
+	driver.get(flib.getValue("amzUrl"));
+
+     wait=new WebDriverWait(driver,20);
 	// Wait for the pop-up to close
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='twotabsearchtextbox']")));
 
-	AmazonPage amz=new AmazonPage(driver);
+	AmazonPageRepo amz=new AmazonPageRepo(driver);
 	
 	amz.amzSearch().sendKeys(productName);
 	
@@ -141,7 +147,7 @@ public class TickerTapeAssignmentTwo
 	String parentAmz = driver.getWindowHandle();
 	
 	amz.clickOnIteam().click();
-	
+
 	// Switching to tabs
 	Set<String> amztabs = driver.getWindowHandles();
 	

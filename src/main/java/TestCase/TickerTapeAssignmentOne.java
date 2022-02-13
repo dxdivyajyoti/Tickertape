@@ -38,18 +38,18 @@ public  void initConfiguration() throws Throwable
 
 	
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--kiosk");
+		chromeOptions.addArguments("start-maximized");
 		driver = new ChromeDriver(chromeOptions);
 
 		
 	}
 	
 	driver.get(flib.getValue("flkUrl"));
-	//driver.manage().window().maximize();
+	driver.manage().window().maximize();
 
 }
 @Test
-public void runScenarioOne() 
+public void fkScenarioOne() 
 {
 	FlipkartPageRepo fp=new FlipkartPageRepo(driver);
 	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
