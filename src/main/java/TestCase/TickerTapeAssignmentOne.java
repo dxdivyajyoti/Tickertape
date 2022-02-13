@@ -41,16 +41,15 @@ public  void initConfiguration() throws Throwable
 		System.setProperty("webdriver.chrome.driver", "/Users/divyajyoti/selenium/chromedriver");
 
 	
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--disable-extensions");
-		options.addArguments("--disable-infobars");
-		options.addArguments("start-Maximized");
+		ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.addArguments("--kiosk");
+		driver = new ChromeDriver(chromeOptions);
 
-		driver = new ChromeDriver(options);
+		driver = new ChromeDriver(chromeOptions);
 	}
 	
 	driver.get(flib.getValue("flkUrl"));
-	driver.manage().window().maximize();
+	//driver.manage().window().maximize();
 
 }
 @Test
@@ -78,9 +77,10 @@ public void runScenarioOne()
 			driver.switchTo().window(tab);
 		}
 	}
-	
-	System.out.println(fp.pricePrint().getText());
+	System.out.println("Selling price  @Flipkart is "+fp.pricePrint().getText());
+	System.out.println("-----------------------------------------------");
 	fp.addingToCart().click();
+
 	
 	JavascriptExecutor js=(JavascriptExecutor)driver;
 	js.executeScript("arguments[0].scrollIntoView();",fp.scrollAction());
@@ -92,7 +92,9 @@ try {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
 }
-System.out.println(fp.getPrice().getText());
+String flpPrice = fp.getPrice().getText();
+System.out.println("Selling price of Product with Qty 2 is  "+flpPrice);
+System.out.println("-----------------------------------------------");
 
 System.out.println("product name is"+fp.getName().getText());
 }

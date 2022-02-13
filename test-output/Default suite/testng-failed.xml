@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCase.TickerTapeAssignmentTwo">
+      <class name="TestCase.TickerTapeAssignmentOne">
         <methods>
           <include name="initConfiguration"/>
           <include name="quitBrowser"/>
-          <include name="comparePrice"/>
+          <include name="runScenarioOne"/>
         </methods>
-      </class> <!-- TestCase.TickerTapeAssignmentTwo -->
+      </class> <!-- TestCase.TickerTapeAssignmentOne -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
