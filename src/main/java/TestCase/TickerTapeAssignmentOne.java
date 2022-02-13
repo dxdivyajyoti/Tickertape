@@ -49,7 +49,7 @@ public  void initConfiguration() throws Throwable
 		driver = new ChromeDriver(options);
 	}
 	
-	driver.get(flib.getValue("testsiteurl"));
+	driver.get(flib.getValue("flkUrl"));
 	driver.manage().window().maximize();
 
 }

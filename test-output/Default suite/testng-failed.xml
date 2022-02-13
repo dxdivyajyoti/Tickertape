@@ -5,7 +5,9 @@
     <classes>
       <class name="TestCase.TickerTapeAssignmentTwo">
         <methods>
+          <include name="fkpScenario"/>
           <include name="initConfiguration"/>
+          <include name="quitBrowser"/>
           <include name="amzScenario"/>
         </methods>
       </class> <!-- TestCase.TickerTapeAssignmentTwo -->

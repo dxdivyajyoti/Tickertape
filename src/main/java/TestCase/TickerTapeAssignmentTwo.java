@@ -66,8 +66,8 @@ public class TickerTapeAssignmentTwo
 		driver.manage().window().maximize();
 
 	}
-	@Test(enabled = false)
-	public void fkpScenario() 
+	@Test(priority=1)
+	public void fkpScenario() throws Throwable 
 	{
 		FlipkartPage fp=new FlipkartPage(driver);
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
@@ -105,15 +105,21 @@ public class TickerTapeAssignmentTwo
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+	String productName = fp.getName().getText();
 	System.out.println(fp.getPrice().getText());
 	
 	String flpPrice = fp.getPrice().getText();
+	 
+	String str=flpPrice.replace("₹", "").replace(",","");
+	System.out.println(str);
+	int sr=Integer.parseInt(str);
+	System.out.println(sr);
 	
-    String productName = fp.getName().getText();
+	flib.setValue("flipkartPrice",str);
 
 	System.out.println("product name is "+fp.getName().getText());
 	}
-	@Test(priority=1)
+	@Test(enabled = false)
 	public void amzScenario() throws Throwable
 	{
 		
@@ -146,18 +152,28 @@ public class TickerTapeAssignmentTwo
 	
 	amz.gotoCart().click();
 	
+	amz.Drodown().click();
 	
+	amz.addOneMore().click();
+	Thread.sleep(2000);
+	String price = amz.printPrice().getText();
+	//int price2=Integer.parseInt(price)*2;
 	
+	//System.out.println(price2);
+	System.out.println(price);
 	
-	
+	String str=price.replace(",", "").replace(" ","").replace(".00", "");
+
+	int sr=Integer.parseInt(str);
+	System.out.println(sr);
 	
 	}
 	
-//	@AfterMethod
-//	public static void quitBrowser()
-//	{
-//		
-//		driver.quit();
-//		
-//	}
+	@AfterMethod
+	public static void quitBrowser()
+	{
+		
+		driver.quit();
+		
+	}
 }
