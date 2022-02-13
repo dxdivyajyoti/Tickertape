@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import Utility.FileUtility;
 
-public class FlipkartPage 
+public class FlipkartPageRepo
 {
 	
 	
@@ -25,7 +25,7 @@ public WebElement initialPrice;
 @FindBy(xpath = "//div[@class='Ob17DV _3X7Jj1']")  public WebElement getPrice;
 @FindBy(xpath="//div[@class='_3fSRat']/descendant::div[@class='_2-uG6-']") public WebElement getName;
 
-public FlipkartPage(WebDriver driver)
+public FlipkartPageRepo(WebDriver driver)
 {
 	this.driver=driver;
 	PageFactory.initElements(driver,this);

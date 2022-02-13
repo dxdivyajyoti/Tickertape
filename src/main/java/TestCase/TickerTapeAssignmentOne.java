@@ -1,7 +1,5 @@
 package TestCase;
 
-
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -12,12 +10,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
-
 import org.testng.annotations.BeforeMethod;
-
 import org.testng.annotations.Test;
 
-import PageObject.FlipkartPage;
+import PageObject.FlipkartPageRepo;
 import Utility.FileUtility;
 
 public class TickerTapeAssignmentOne
@@ -55,7 +51,7 @@ public  void initConfiguration() throws Throwable
 @Test
 public void runScenarioOne() 
 {
-	FlipkartPage fp=new FlipkartPage(driver);
+	FlipkartPageRepo fp=new FlipkartPageRepo(driver);
 	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	fp.closePopup().click();
 	try 

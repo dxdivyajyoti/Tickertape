@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AmazonPage 
+public class AmazonPageRepo
 {
 	public static WebDriver driver;
 	
@@ -31,7 +31,7 @@ public class AmazonPage
 	@FindBy(xpath="(//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap'])[1]") public 
 	WebElement printPrice;
 	
-	public AmazonPage(WebDriver driver)
+	public AmazonPageRepo(WebDriver driver)
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
