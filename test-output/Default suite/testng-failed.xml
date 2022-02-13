@@ -6,7 +6,6 @@
       <class name="TestCase.TickerTapeAssignmentTwo">
         <methods>
           <include name="initConfiguration"/>
-          <include name="quitBrowser"/>
           <include name="amzScenario"/>
         </methods>
       </class> <!-- TestCase.TickerTapeAssignmentTwo -->

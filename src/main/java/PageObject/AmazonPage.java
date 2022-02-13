@@ -14,8 +14,8 @@ public class AmazonPage
 	@FindBy(xpath="//input[@id='nav-search-submit-button']")
 	public WebElement selectMatch;
 	
-	@FindBy(xpath="//div[@class='a-section a-spacing-none s-padding-right-small s-title-instructions-style']/\"\n"
-			+ "			+ \"descendant::span[text()='Apple iPhone 12 (128GB) - Blue']") public WebElement clickOnIteam;
+	@FindBy(xpath="(//div[@class='a-section a-spacing-small a-spacing-top-small']/descendant::span[@class='a-size-medium a-color-base a-text-normal'])[1]")
+	public WebElement clickOnIteam;
 	
 	
 	@FindBy(xpath="//input[@id='add-to-cart-button']")public WebElement addToCart;

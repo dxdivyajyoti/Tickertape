@@ -120,27 +120,44 @@ public class TickerTapeAssignmentTwo
 	// Launch Amazon url
 		driver.get(flib.getValue("amzUrl"));
 		wait=new WebDriverWait(driver,20);
+	// Wait for the pop-up to close
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='twotabsearchtextbox']")));
-	
-	//Thread.sleep(10000);
+
 	AmazonPage amz=new AmazonPage(driver);
 	
 	amz.amzSearch().sendKeys(flib.getValue("iteam2"));
 	
 	amz.match().click();
+	String parent = driver.getWindowHandle();
 	
+	amz.clickOnIteam().click();
 	
-	
-	
-	
-	
-	}
-	
-	@AfterMethod
-	public static void quitBrowser()
+	Set<String> tabs = driver.getWindowHandles();
+	for(String tab:tabs)
 	{
-		
-		driver.quit();
-		
+		if(!tab.equalsIgnoreCase(parent))
+		{
+			driver.switchTo().window(tab);
+		}
 	}
+	
+	amz.addToCart().click();
+     wait.until(ExpectedConditions.visibilityOf(amz.goToCart));
+	
+	amz.gotoCart().click();
+	
+	
+	
+	
+	
+	
+	}
+	
+//	@AfterMethod
+//	public static void quitBrowser()
+//	{
+//		
+//		driver.quit();
+//		
+//	}
 }
