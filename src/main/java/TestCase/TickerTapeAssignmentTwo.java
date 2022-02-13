@@ -3,11 +3,14 @@ package TestCase;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -116,8 +119,10 @@ public class TickerTapeAssignmentTwo
 		
 	// Launch Amazon url
 		driver.get(flib.getValue("amzUrl"));
+		wait=new WebDriverWait(driver,20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='twotabsearchtextbox']")));
 	
-	Thread.sleep(10000);
+	//Thread.sleep(10000);
 	AmazonPage amz=new AmazonPage(driver);
 	
 	amz.amzSearch().sendKeys(flib.getValue("iteam2"));
