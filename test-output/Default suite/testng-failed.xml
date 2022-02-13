@@ -5,10 +5,9 @@
     <classes>
       <class name="TestCase.TickerTapeAssignmentTwo">
         <methods>
-          <include name="fkpScenario"/>
           <include name="initConfiguration"/>
           <include name="quitBrowser"/>
-          <include name="amzScenario"/>
+          <include name="comparePrice"/>
         </methods>
       </class> <!-- TestCase.TickerTapeAssignmentTwo -->
     </classes>

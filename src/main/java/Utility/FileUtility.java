@@ -21,20 +21,4 @@ public class FileUtility
 	}
 	
 	
-	public static void setValue(String key,String Value) throws Throwable
-	{
-       String path = "./PriceConfiguration.properties";
-		
-		File file = new File(path);
-		file.createNewFile();
-		
-		Properties pr = new Properties();
-		pr.setProperty(key,Value);
-		
-		FileOutputStream fis = new FileOutputStream(file);
-		pr.store(fis, "Input data");
-		
-		fis.close();
-	}
-	
 }

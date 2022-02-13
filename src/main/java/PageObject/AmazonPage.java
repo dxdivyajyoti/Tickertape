@@ -17,6 +17,8 @@ public class AmazonPage
 	@FindBy(xpath="(//div[@class='a-section a-spacing-small a-spacing-top-small']/descendant::span[@class='a-size-medium a-color-base a-text-normal'])[1]")
 	public WebElement clickOnIteam;
 	
+	@FindBy(xpath="//div[@class='a-section a-spacing-small']/descendant::span[@class='a-price a-text-price a-size-medium apexPriceToPay']") public WebElement initialPrice;
+	
 	
 	@FindBy(xpath="//input[@id='add-to-cart-button']")public WebElement addToCart;
 	
@@ -53,6 +55,10 @@ public class AmazonPage
 		return clickOnIteam;
 	}
 	
+	public WebElement initialPrice()
+	{
+		return initialPrice;
+	}
 	
 	public WebElement addToCart()
 	{

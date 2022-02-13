@@ -49,26 +49,26 @@ public class TickerTapeAssignmentTwo
 
 				driver = new ChromeDriver(options);
 			}
-		} catch (Throwable e1) {
-			// TODO Auto-generated catch block
+		} 
+		catch (Throwable e1) 
+		{
+			
 			e1.printStackTrace();
 		}
 		
-		try 
-		{
-			driver.get(flib.getValue("flkUrl"));
-		} 
-		catch (Throwable e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		driver.manage().window().maximize();
 
 	}
-	@Test(priority=1)
+	
+	
+	
+	
+	
+	
+	@Test
 	public void fkpScenario() throws Throwable 
 	{
+		driver.get(flib.getValue("flkUrl"));
 		FlipkartPage fp=new FlipkartPage(driver);
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		fp.closePopup().click();
@@ -81,73 +81,86 @@ public class TickerTapeAssignmentTwo
 			e.printStackTrace();
 		}
 		fp.selectIteam().click();
-		String parent=driver.getWindowHandle();
+		String parentFkp=driver.getWindowHandle();
 		fp.selectFirst().click();
-		Set<String> tabs = driver.getWindowHandles();
-		for(String tab:tabs)
+		Set<String> fkptabs = driver.getWindowHandles();
+		for(String fkptab:fkptabs)
 		{
-			if(!tab.equalsIgnoreCase(parent))
+			if(!fkptab.equalsIgnoreCase(parentFkp))
 			{
-				driver.switchTo().window(tab);
+				driver.switchTo().window(fkptab);
 			}
 		}
 		
-		System.out.println(fp.pricePrint().getText());
+		System.out.println("Selling price  @Flipkart is "+fp.pricePrint().getText());
+		System.out.println("-----------------------------------------------");
 		fp.addingToCart().click();
+		
+		//Scroll down to avoid Exception
 		
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("arguments[0].scrollIntoView();",fp.scrollAction());
 		
-	fp.addOneMore().click();
-	try {
+	  fp.addOneMore().click();
+	  
+	try 
+	{
 		Thread.sleep(3000);
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
+	} 
+	catch (InterruptedException e) 
+	{
+		
 		e.printStackTrace();
 	}
 	String productName = fp.getName().getText();
-	System.out.println(fp.getPrice().getText());
 	
 	String flpPrice = fp.getPrice().getText();
-	 
-	String str=flpPrice.replace("₹", "").replace(",","");
-	System.out.println(str);
-	int sr=Integer.parseInt(str);
-	System.out.println(sr);
+	System.out.println("Selling price of Product with Qty 2 is  "+flpPrice);
+	System.out.println("-----------------------------------------------");
 	
-	flib.setValue("flipkartPrice",str);
+	// as Price contains rupee symbol,comma,decimal value 
+		// we have to replace and remove these before convert to int type
+	 
+	String str1=flpPrice.replace("₹", "").replace(",","");
 
-	System.out.println("product name is "+fp.getName().getText());
-	}
-	@Test(enabled = false)
-	public void amzScenario() throws Throwable
-	{
-		
+	int fkPrice = Integer.parseInt(str1);
+	
 	// Launch Amazon url
+	
 		driver.get(flib.getValue("amzUrl"));
 		wait=new WebDriverWait(driver,20);
+		
 	// Wait for the pop-up to close
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='twotabsearchtextbox']")));
 
 	AmazonPage amz=new AmazonPage(driver);
 	
-	amz.amzSearch().sendKeys(flib.getValue("iteam2"));
+	amz.amzSearch().sendKeys(productName);
 	
 	amz.match().click();
-	String parent = driver.getWindowHandle();
+	
+	String parentAmz = driver.getWindowHandle();
 	
 	amz.clickOnIteam().click();
 	
-	Set<String> tabs = driver.getWindowHandles();
-	for(String tab:tabs)
+	// Switching to tabs
+	Set<String> amztabs = driver.getWindowHandles();
+	
+	for(String amztab:amztabs)
 	{
-		if(!tab.equalsIgnoreCase(parent))
+		if(!amztab.equalsIgnoreCase(parentAmz))
 		{
-			driver.switchTo().window(tab);
+			driver.switchTo().window(amztab);
 		}
 	}
 	
+	System.out.println("Selling price  @Flipkart is "+amz.initialPrice().getText());
+	System.out.println("-----------------------------------------------");
+	
 	amz.addToCart().click();
+
+	//wait to check element to be visible before Click action.
+	
      wait.until(ExpectedConditions.visibilityOf(amz.goToCart));
 	
 	amz.gotoCart().click();
@@ -155,19 +168,47 @@ public class TickerTapeAssignmentTwo
 	amz.Drodown().click();
 	
 	amz.addOneMore().click();
+	
+	// Static wait is used to wait till update the price from dropdown 
 	Thread.sleep(2000);
-	String price = amz.printPrice().getText();
-	//int price2=Integer.parseInt(price)*2;
-	
-	//System.out.println(price2);
-	System.out.println(price);
-	
-	String str=price.replace(",", "").replace(" ","").replace(".00", "");
 
-	int sr=Integer.parseInt(str);
-	System.out.println(sr);
 	
+	
+	String price = amz.printPrice().getText();
+	
+	System.out.println("Selling price of Product with Qty 2 is "+price);
+	System.out.println("-----------------------------------------------");
+	
+	// as Price contains rupee symbol,comma,decimal value 
+	// we have to replace and remove these before convert to int type
+	
+	String str2=price.replace(",", "").replace(" ","").replace(".00", "");
+	
+	int amzPrice = Integer.parseInt(str2);
+	
+	
+	
+	
+	//compare the price
+	
+	
+	if(fkPrice>amzPrice)
+	{
+		System.out.println("amazon is better place to Order ");
 	}
+	
+	else if(fkPrice<amzPrice)
+	{
+		System.out.println("Flipkart is better to choose");
+	}
+	
+	else
+	{
+		System.out.println("Both the marketPlace have same price ");
+	}
+	
+}
+	
 	
 	@AfterMethod
 	public static void quitBrowser()
