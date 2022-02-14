@@ -2,34 +2,34 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-14T12:04:18 IST" name="Suite" finished-at="2022-02-14T12:05:45 IST" duration-ms="86353">
+  <suite started-at="2022-02-14T12:30:25 IST" name="Suite" finished-at="2022-02-14T12:31:56 IST" duration-ms="90893">
     <groups>
     </groups>
-    <test started-at="2022-02-14T12:04:18 IST" name="Test" finished-at="2022-02-14T12:05:45 IST" duration-ms="86353">
+    <test started-at="2022-02-14T12:30:25 IST" name="Test" finished-at="2022-02-14T12:31:56 IST" duration-ms="90893">
       <class name="TestCase.TickerTapeAssignmentOne">
-        <test-method is-config="true" signature="initConfiguration()[pri:0, instance:TestCase.TickerTapeAssignmentOne@4278a03f]" started-at="2022-02-14T12:04:18 IST" name="initConfiguration" finished-at="2022-02-14T12:04:32 IST" duration-ms="14039" status="PASS">
+        <test-method is-config="true" signature="initConfiguration()[pri:0, instance:TestCase.TickerTapeAssignmentOne@309e345f]" started-at="2022-02-14T12:30:25 IST" name="initConfiguration" finished-at="2022-02-14T12:30:41 IST" duration-ms="16112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initConfiguration -->
-        <test-method signature="fkScenarioOne()[pri:0, instance:TestCase.TickerTapeAssignmentOne@4278a03f]" started-at="2022-02-14T12:04:32 IST" name="fkScenarioOne" finished-at="2022-02-14T12:04:49 IST" duration-ms="16136" status="PASS">
+        <test-method signature="fkScenarioOne()[pri:0, instance:TestCase.TickerTapeAssignmentOne@309e345f]" started-at="2022-02-14T12:30:41 IST" name="fkScenarioOne" finished-at="2022-02-14T12:30:58 IST" duration-ms="16267" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fkScenarioOne -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:TestCase.TickerTapeAssignmentOne@4278a03f]" started-at="2022-02-14T12:04:49 IST" name="quitBrowser" finished-at="2022-02-14T12:04:49 IST" duration-ms="204" status="PASS">
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:TestCase.TickerTapeAssignmentOne@309e345f]" started-at="2022-02-14T12:30:58 IST" name="quitBrowser" finished-at="2022-02-14T12:30:58 IST" duration-ms="171" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
       </class> <!-- TestCase.TickerTapeAssignmentOne -->
       <class name="TestCase.TickerTapeAssignmentTwo">
-        <test-method is-config="true" signature="initConfiguration()[pri:0, instance:TestCase.TickerTapeAssignmentTwo@1f0f1111]" started-at="2022-02-14T12:04:49 IST" name="initConfiguration" finished-at="2022-02-14T12:04:51 IST" duration-ms="2032" status="PASS">
+        <test-method is-config="true" signature="initConfiguration()[pri:0, instance:TestCase.TickerTapeAssignmentTwo@60d8c9b7]" started-at="2022-02-14T12:30:58 IST" name="initConfiguration" finished-at="2022-02-14T12:31:01 IST" duration-ms="3077" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initConfiguration -->
-        <test-method signature="fkamzScenario()[pri:0, instance:TestCase.TickerTapeAssignmentTwo@1f0f1111]" started-at="2022-02-14T12:04:51 IST" name="fkamzScenario" finished-at="2022-02-14T12:05:44 IST" duration-ms="53625" status="PASS">
+        <test-method signature="fkamzScenario()[pri:0, instance:TestCase.TickerTapeAssignmentTwo@60d8c9b7]" started-at="2022-02-14T12:31:01 IST" name="fkamzScenario" finished-at="2022-02-14T12:31:56 IST" duration-ms="54942" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fkamzScenario -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:TestCase.TickerTapeAssignmentTwo@1f0f1111]" started-at="2022-02-14T12:05:44 IST" name="quitBrowser" finished-at="2022-02-14T12:05:45 IST" duration-ms="233" status="PASS">
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:TestCase.TickerTapeAssignmentTwo@60d8c9b7]" started-at="2022-02-14T12:31:56 IST" name="quitBrowser" finished-at="2022-02-14T12:31:56 IST" duration-ms="247" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->

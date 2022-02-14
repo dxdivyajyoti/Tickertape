@@ -128,7 +128,7 @@ public class TickerTapeAssignmentTwo
 	String productName = fp.getName().getText();
 	
 	String flpPrice = fp.getPrice().getText();
-	System.out.println("Selling price of Product with Qty 2 is  "+flpPrice);
+	System.out.println("Selling price of Product with Qty 2 is "+flpPrice);
 	System.out.println("-----------------------------------------------");
 	
 	// as Price contains rupee symbol,comma,decimal value 
