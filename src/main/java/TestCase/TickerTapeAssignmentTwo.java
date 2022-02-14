@@ -76,6 +76,9 @@ public class TickerTapeAssignmentTwo
 		
 		FlipkartPageRepo fp=new FlipkartPageRepo(driver);
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
+		//Avoiding Login pop-up for Guest User action
+		
 		fp.closePopup().click();
 		try 
 		{
