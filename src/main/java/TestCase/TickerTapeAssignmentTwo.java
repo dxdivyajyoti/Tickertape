@@ -27,6 +27,9 @@ public class TickerTapeAssignmentTwo
 	public static WebDriverWait wait;
 	public static FileUtility flib;
 	
+	
+	//Launch browser  with required Browser name
+	
 	@BeforeMethod
 	public  void initConfiguration() 
 	{
@@ -45,9 +48,8 @@ public class TickerTapeAssignmentTwo
 
 			
 				ChromeOptions chromeOptions = new ChromeOptions();
-				chromeOptions.addArguments("start-maximized");
+				chromeOptions.addArguments("--start-fullscreen");
 				driver = new ChromeDriver(chromeOptions);
-
 				
 			}
 		} 
@@ -61,27 +63,37 @@ public class TickerTapeAssignmentTwo
 
 	}
 	
-	
-	
-	
-	
+
 	
 	@Test
 	public void fkamzScenario() throws Throwable 
 	{
+		// url to be fetched from Property file using custom function from Utility Package
+		
 		driver.get(flib.getValue("flkUrl"));
+		
+		//object creation of Page class to get elements 
+		
 		FlipkartPageRepo fp=new FlipkartPageRepo(driver);
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		fp.closePopup().click();
 		try 
 		{
+			
+			// product name to be fetched from Property file by custom function defined on utility 
+			
 			fp.enterProduct().sendKeys(flib.getValue("iteam"));
 		} catch (Throwable e)
 		{
 			
 			e.printStackTrace();
 		}
+		//select the first iteam shown
+		
 		fp.selectIteam().click();
+		
+		// getting windowhandle id to switching control from current to sub sequent tabs
+		
 		String parentFkp=driver.getWindowHandle();
 		fp.selectFirst().click();
 		Set<String> fkptabs = driver.getWindowHandles();
@@ -129,14 +141,17 @@ public class TickerTapeAssignmentTwo
 	
 	
 	// Launch Amazon url
-	
-	
+
 	
 	driver.get(flib.getValue("amzUrl"));
-
+	
+	
+//Define Explicit wait
+	
      wait=new WebDriverWait(driver,20);
 	// Wait for the pop-up to close
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='twotabsearchtextbox']")));
+		
+     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='twotabsearchtextbox']")));
 
 	AmazonPageRepo amz=new AmazonPageRepo(driver);
 	
@@ -174,7 +189,7 @@ public class TickerTapeAssignmentTwo
 	
 	amz.addOneMore().click();
 	
-	// Static wait is used to wait till update the price from dropdown 
+	// Static wait is used to wait till update the price after selecting option from dropdown 
 	Thread.sleep(2000);
 
 	
@@ -188,6 +203,9 @@ public class TickerTapeAssignmentTwo
 	// we have to replace and remove these before convert to int type
 	
 	String str2=price.replace(",", "").replace(" ","").replace(".00", "");
+	
+	// to convert String to Primitive int ,use parseInt method of Integer Wrapper class
+	
 	
 	int amzPrice = Integer.parseInt(str2);
 	
