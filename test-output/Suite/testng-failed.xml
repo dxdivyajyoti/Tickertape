@@ -10,6 +10,13 @@
           <include name="fkamzScenario"/>
         </methods>
       </class> <!-- TestCase.TickerTapeAssignmentTwo -->
+      <class name="TestCase.TickerTapeAssignmentOne">
+        <methods>
+          <include name="initConfiguration"/>
+          <include name="fkScenarioOne"/>
+          <include name="quitBrowser"/>
+        </methods>
+      </class> <!-- TestCase.TickerTapeAssignmentOne -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

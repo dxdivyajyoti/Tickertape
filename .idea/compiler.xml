@@ -6,11 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Tickertape" />
+        <module name="TechAssignment" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Tickertape" target="1.7" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
