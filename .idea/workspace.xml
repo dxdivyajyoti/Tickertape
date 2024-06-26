@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39cf36c7-24a8-4a8b-b7ff-6333468d2f3a" name="Changes" comment="" />
+    <list default="true" id="39cf36c7-24a8-4a8b-b7ff-6333468d2f3a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/TestOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/TestOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PageObject/AmazonPageRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PageObject/AmazonPageRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PageObject/TestOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PageObject/TestOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TestCase/AmazonPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestCase/AmazonPage.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,29 +35,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TestOne.executor&quot;: &quot;Run&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TestNG.AmazonPage.runBrowser.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AmazonPage.test.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AmazonPage.testcase.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/divyajyoti/eclipse-workspace/Tickertape&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Test.executor": "Run",
+    "Application.TestOne.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.AmazonPage.runBrowser.executor": "Run",
+    "TestNG.AmazonPage.test.executor": "Run",
+    "TestNG.AmazonPage.testcase.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/b0276648/Desktop/IQPT/Tickertape",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.AmazonPage.testcase">
+  <component name="RunManager" selected="Application.TestOne">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestCase.Test" />
       <module name="TechAssignment" />
@@ -133,10 +141,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestOne" />
         <item itemvalue="TestNG.AmazonPage.testcase" />
         <item itemvalue="TestNG.AmazonPage.test" />
         <item itemvalue="TestNG.AmazonPage.runBrowser" />
-        <item itemvalue="Application.TestOne" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>

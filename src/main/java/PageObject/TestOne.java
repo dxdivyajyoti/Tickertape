@@ -8,9 +8,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class TestOne
 {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","/Users/divyajyoti/eclipse-workspace/Tickertape/chromedriver");
+        System.setProperty("webdriver.chrome.driver","/Users/b0276648/Desktop/IQPT/Tickertape/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
+//        options.addArguments("--remote-allow-origins=*");
         options.addArguments("start-maximized");
         options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
